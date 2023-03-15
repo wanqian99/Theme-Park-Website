@@ -32,5 +32,5 @@ In this module, we (group of 5) were tasked to develop a simple theme park websi
 <br><br><br>
 
 ### 8) FAQ page
-<kbd><img src="https://user-images.githubusercontent.com/62084317/225350145-a7e0cd5a-478e-4fe0-8d09-8bcb2d6de848.png" width="800"></kbd>
+<kbd><img src="https://user-images.githubusercontent.com/62084317/225351965-be27ff13-a7a2-424f-b3ec-eb30d18a9948.png" width="800"></kbd>
 <br><br><br>
