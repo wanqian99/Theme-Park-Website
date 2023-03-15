@@ -1,3 +1,5 @@
+<pre>
+
 # Web-Development
 
 In this module, we (group of 5) were tasked to develop a simple theme park website with HTML, CSS and Javascript.
@@ -7,3 +9,5 @@ In this module, we (group of 5) were tasked to develop a simple theme park websi
 
 ### Attraction page
 <kbd><img src="https://user-images.githubusercontent.com/62084317/225337449-01badeed-c250-4616-88bc-7d8373eb0835.png" width="800"></kbd>
+
+</pre>
