@@ -1,6 +1,7 @@
 # Web-Development
 
 In this module, we (group of 5) were tasked to develop a simple theme park website with HTML, CSS and Javascript.
+<br><br>
 
 ### Home Page
 <kbd><img src="https://user-images.githubusercontent.com/62084317/225332611-71e2f5c1-80bd-41b5-9ff5-3249411126fa.png" width="800"></kbd>
