@@ -1,9 +1,9 @@
 # Web-Development
 
+https://theme-park-website-web-development-8omytv4ar-wanqian99.vercel.app
+<br>
 In this module, we (group of 5) were tasked to develop a simple theme park website with HTML, CSS and Javascript.
 <br><br>
-
-https://theme-park-website-web-development-8omytv4ar-wanqian99.vercel.app
 
 ### 1) Home Page
 <kbd><img src="https://user-images.githubusercontent.com/62084317/225332611-71e2f5c1-80bd-41b5-9ff5-3249411126fa.png" width="800"></kbd>
