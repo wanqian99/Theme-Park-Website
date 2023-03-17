@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Camp Half-Blood Theme Park </title>
+        <meta charset="utf-8">
+        <meta name="description" content="This is the official website of Camp Half-Blood, a Fantasy Theme Park.">
+        <meta name="author" content="Camp Half-Blood">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="Camp Half-Blood, a Fantasy Theme Park">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel=stylesheet href="stylesheet.css">
+        <meta name=”robots” content=”noindex,nofollow”>
+    </head>
+    <body> 
+        <header>
+            <!---------------HEADER--------------->
+            <a id="top"></a>
+            <div class="header-container">
+                <!-- Navigation Bar -->
+                <nav>
+                    <a href="Attractions.html"><i class="fa fa-star"></i> Attractions</a>
+                    <a href="Shops.html"><i class="fa fa-shopping-bag"></i> Shops</a> 
+                    <a href="Dining.html"><i class="fa fa-cutlery"></i> Dining</a> 
+                    <a class="active" href="Tickets.html"><i class="fa fa-ticket"></i> Tickets</a> 
+                    <a href="Park_Map.html"><i class="fa fa-map"></i> Map</a>
+                    <a href="FAQ.html"><i class="fa fa-question"></i> Contact Us/FAQ</a>
+                </nav>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+                <script>
+                    $("nav").addClass("js").before('<div id="menu">&#9776;</div>');
+                    $("#menu").click(function(){
+                        $("nav").toggle();
+                    });
+                    $(window).resize(function(){
+                        if(window.innerWidth > 600) {
+                            $("nav").removeAttr("style");
+                        }
+                    });
+                </script>
+                <!-- Logo and Opening Hours -->
+                <div class="leftheader">
+                    <div class="logo">
+                        <a href="index.html">
+                            <img src="images/header/logo.svg" alt="Camp Half-Blood">
+                            <p>Camp Half-Blood</p></a>
+                    </div>
+                    <div class="opening">
+                        <img id="clock">
+                        <script>
+                            var d = new Date();
+                            var n = d.getUTCHours();
+                            if(4<n && n<13){//between 1200hrs and 2100hrs or 9pm
+                                document.getElementById("clock").src = "images/header/open.svg";
+                            }else{
+                                document.getElementById("clock").src = "images/header/close.svg";
+                            }
+                        </script>
+                    </div>
+                </div>
+                <div class="rightheader">
+                    <!-- Language Selector -->
+                    <div class="language-container">
+                        <select class="language-selection">
+                            <option value ="EN">English</option>
+                            <option value ="CN">中文</option>
+                        </select>
+                    </div>
+                    <!-- Social Media -->
+                    <div class="social-container">
+                        <!-- Login Menu -->
+                        <button class="loginBtn" onclick="loginFunction()"><i class="fa fa-user-circle-o" aria-hidden="true"></i></button>
+                        <div id="loginForm" class="modal">
+                            <form class="modal-content animate" action="/action_page.php" method="post">
+                                <div class="imgcontainer">
+                                    <span onclick="document.getElementById('loginForm').style.display='none'" class="close" title="Close">&times;</span>
+                                    <img src="images/header/logo.svg" alt="logo" class="formlogo">
+                                </div>
+
+                                <div class="logincontainer">
+                                    <label><b>Email Address:</b></label>
+                                    <input type="text" placeholder="Enter Email" name="email" required>
+
+                                    <label><b>Password:</b></label>
+                                    <input type="password" placeholder="Enter Password" name="psw" required>
+
+                                    <button type="submit" class="btnLogin">Login</button>
+                                    <button type="submit" class="btnRegister" onclick="index.html">Register</button>
+                                    <label>
+                                        <input type="checkbox" checked="checked" name="remember"> Remember me
+                                    </label>
+                                </div>
+                            </form>
+                        </div>
+
+                        <script>
+                            function loginFunction() {
+                                var x = document.getElementById("loginForm");
+                                if (x.style.display === "none") {
+                                    x.style.display = "block";
+                                } else {
+                                    x.style.display = "none";
+                                }
+                            }
+                        </script>
+                        <!-- other social media icons -->
+                        <a href="https://www.facebook.com/" target="_blank">
+                            <i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                        <a href="https://www.youtube.com/" target="_blank">
+                            <i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank">
+                            <i class="fa fa-instagram" aria-hidden="true"></i></a>
+                        <a href="https://www.twitter.com/" target="_blank">
+                            <i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+
+
+        <!-------------Title------------->   
+        <div class="title-container">
+            <!-- Title -->
+            <img src="images/tickets/titleticket.jpg" alt="Tickets" >
+            <h1> Tickets </h1>
+        </div>
+
+        <!---------------Left Column--------------->
+        <section class="column left"><img class="tickets" src="images/tickets/Pillar4.png" alt="Error"></section>
+
+        <!---------------Middle--------------->
+        <section class="column middle">
+
+            <article class="selector">
+                <ul class="selectors">
+                    <li class="selector"><a class="selector" href="#bookingform">Booking</a></li>
+                    <li class="selector"><a class="selector" href="#pricelist">Price List</a></li>
+                    <li class="selector"><a class="selector" href="#grppromo">Group Promotions</a></li>
+                    <li class="selector"><a class="selector" href="#eventpromo">Event Promotions</a></li>
+                    <li class="selector"><a class="selector" href="#spromo">Special Promotions</a></li>
+                </ul>
+            </article>
+
+
+            <!-------------Ticket Booking Form/Middle------------->
+            <article class="ticketcontainer">
+                <div class="bookingform">
+
+                    <form action="/action_page.php">
+
+
+
+                        <fieldset class="bookingform">
+                            <legend class="tickets"><a id="bookingform"><b>Book Tickets Now:</b></a></legend>
+                            <span class="bookingform"><label class="bookingform" for="TicketType">Choose a ticket type:</label></span>
+                            <select name="Ticket Type" id="TicketType">
+                                <option value="AdultTicket">Standard Ticket for Adult</option>
+                                <option value="ChildTicket">Standard Ticket for Child</option>
+                                <option value="AdultPass">Fast Pass for Adult</option>
+                                <option value="ChildPass">Fast Pass for Child</option>
+                            </select><br><br>
+                            <span class="bookingform"><label class="bookingform" for="ticketnbr">Number of Tickets:</label></span>
+                            <input type="text" id="ticketnbr" name="ticketnbr"><br><br>
+                            <span class="bookingform"><label class="bookingform" for="VisitDate">Date of Visit:</label></span>
+                            <input type="date" id="VisitDate" name="VisitDate"><br><br>
+                            <input type="submit" value="Submit">
+                        </fieldset>
+                    </form></div>
+            </article>
+
+            <!---------------Price Table/Middle--------------->
+            <article class="ticketcontainer">
+
+                <div class="pxtable">
+                    <a id="pricelist"><h4 class="pxlist"><u>Price List</u></h4></a>
+                    <table class="pxlist">
+                        <tr class="pxlist">
+                            <th class="pxlist">Type</th>
+                            <th class="pxlist">Adult</th>
+                            <th class="pxlist">Child</th>
+                        </tr>
+                        <tr class="pxlist">
+                            <td class="pxlist">Ticket</td>
+                            <td class="pxlist">$X</td>
+                            <td class="pxlist">$Y</td>
+                        </tr>
+                        <tr class="pxlist">
+                            <td class="pxlist">Fast Pass</td>
+                            <td class="pxlist">$X</td>
+                            <td class="pxlist">$Y</td>
+                        </tr>
+                    </table>
+
+                </div>
+
+            </article>
+
+            <!--Promos/Middle-->
+            <article class="ticketcontainer">
+                <div class="promo">
+                    <a id="grppromo"><p class="promo"><b><u>Group Promotions</u></b></p><br>
+                        <span class="promo1"><b>Do you have more than 5 people?</b></span><br><br></a>
+                    <span class="promo2">Good news! Groups larger than 5 get 25% off!!</span><br><br><br>
+                    <span class="promo1"><b>Coming in a group of 3?</b></span><br><br>
+                    <span class="promo2">Three times is the charm this upcoming August! 
+                        3 discount coupons when you book for three!!!</span><br><br><br>
+                </div>
+            </article>
+
+            <article class="ticketcontainer">
+                <div class="promo">
+                    <a id="eventpromo"><p class="promo"><b><u>Event Promotions</u></b></p><br></a>
+                    <span class="promo1"><b>Bringing a date?</b></span><br><br>
+                    <span class="promo2">Enjoy a special couples-only offer when you book in advance for Christmas!</span><br><br><br>
+                    <span class="promo1"><b>Booking for the school holidays?</b></span><br><br>
+                    <span class="promo2">Did you know? Tickets are 10% cheaper during the holidays!!<br><br>
+                        Present your student ID at any food and beverage outlet to receive a special student offer!</span><br><br><br>
+
+                </div>
+            </article>
+
+            <article class="ticketcontainer">
+                <div class="promo">
+                    <a id="spromo"><p class="promo"><b><u>Special Promotions</u></b></p><br>
+                        <span class="promo1"><b>Tired from a long week on duty?</b></span><br><br></a>
+                    <span class="promo2">To honor our medical workers, we will be having a special 20% discount for all medical personnel and staff working at hospitals!<br><br>
+                        Simply present your any relevant identification to our staff at the ticket booths and enjoy your day!</span><br><br><br>
+                </div>
+            </article>
+        </section>
+        <!---------------Right Column--------------->
+        <section class="column right"><img class="tickets" src="images/tickets/Pillar4.png" alt="Error"></section>
+
+        <!-- Scroll to Top Button -->
+        <aside>
+            <div id="TopBtn"><a href="#top"><i class="fa fa-angle-up" aria-hidden="true"></i></a></div>
+            <script>
+                $('#TopBtn').hide();
+                $(window).scroll(function() {
+                    var height = $(window).scrollTop();
+                    if (height > 100) {
+                        $('#TopBtn').fadeIn();
+                    } else {
+                        $('#TopBtn').fadeOut();
+                    }
+                });
+            </script>
+        </aside>
+
+        <!---------------Footer--------------->
+        <footer>
+            <div class="footer-container">
+                <div class="leftfooter">
+                    <p>&copy; 3Pandas Corporation</p>
+                </div>
+                <ul class="rightfooter">
+                    <li><a href="Appendix/Camp%20Half%20Blood%20Rules%20and%20Regulations.pdf" download>Rules and Regualations</a></li>
+                    <li><a href="FAQ.html#Cookies">Cookies Policy</a></li>
+                    <li><a href="FAQ.html#Privacy">Privacy Policy</a></li>
+                    <li><a href="FAQ.html#T&C">Terms and Conditions</a></li>
+                </ul>
+            </div>
+        </footer>
+    </body>
+
+</html>

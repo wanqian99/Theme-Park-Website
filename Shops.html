@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Camp Half-Blood Theme Park </title>
+        <meta charset="utf-8">
+        <meta name="description" content="This is the official website of Camp Half-Blood, a Fantasy Theme Park.">
+        <meta name="author" content="Camp Half-Blood">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="Camp Half-Blood, a Fantasy Theme Park">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel=stylesheet href="stylesheet.css">
+        <meta name=”robots” content=”noindex,nofollow”>
+    </head>
+    <body>
+        <header>
+            <a id="top"></a>
+            <div class="header-container">
+                <!-- Navigation Bar -->
+                <nav>
+                    <a href="Attractions.html"><i class="fa fa-star"></i> Attractions</a>
+                    <a class="active" href="Shops.html"><i class="fa fa-shopping-bag"></i> Shops</a> 
+                    <a href="Dining.html"><i class="fa fa-cutlery"></i> Dining</a> 
+                    <a href="Tickets.html"><i class="fa fa-ticket"></i> Tickets</a> 
+                    <a href="Park_Map.html"><i class="fa fa-map"></i> Map</a>
+                    <a href="FAQ.html"><i class="fa fa-question"></i> Contact Us/FAQ</a>
+                </nav>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+                <script>
+                    $("nav").addClass("js").before('<div id="menu">&#9776;</div>');
+                    $("#menu").click(function(){
+                        $("nav").toggle();
+                    });
+                    $(window).resize(function(){
+                        if(window.innerWidth > 600) {
+                            $("nav").removeAttr("style");
+                        }
+                    });
+                </script>
+                <!-- Logo and Opening Hours -->
+                <div class="leftheader">
+                    <div class="logo">
+                        <a href="index.html">
+                            <img src="images/header/logo.svg" alt="Camp Half-Blood">
+                            <p>Camp Half-Blood</p></a>
+                    </div>
+                    <div class="opening">
+                        <img id="clock">
+                        <script>
+                            var d = new Date();
+                            var n = d.getUTCHours();
+                            if(4<n && n<13){//between 1200hrs and 2100hrs or 9pm
+                                document.getElementById("clock").src = "images/header/open.svg";
+                            }else{
+                                document.getElementById("clock").src = "images/header/close.svg";
+                            }
+                        </script>
+                    </div>
+                </div>
+                <div class="rightheader">
+                    <!-- Language Selector -->
+                    <div class="language-container">
+                        <select class="language-selection">
+                            <option value ="EN">English</option>
+                            <option value ="CN">中文</option>
+                        </select>
+                    </div>
+                    <!-- Social Media -->
+                    <div class="social-container">
+                        <!-- Login Menu -->
+                        <button class="loginBtn" onclick="loginFunction()"><i class="fa fa-user-circle-o" aria-hidden="true"></i></button>
+                        <div id="loginForm" class="modal">
+                            <form class="modal-content animate" action="/action_page.php" method="post">
+                                <div class="imgcontainer">
+                                    <span onclick="document.getElementById('loginForm').style.display='none'" class="close" title="Close">&times;</span>
+                                    <img src="images/header/logo.svg" alt="logo" class="formlogo">
+                                </div>
+
+                                <div class="logincontainer">
+                                    <label><b>Email Address:</b></label>
+                                    <input type="text" placeholder="Enter Email" name="email" required>
+
+                                    <label><b>Password:</b></label>
+                                    <input type="password" placeholder="Enter Password" name="psw" required>
+
+                                    <button type="submit" class="btnLogin">Login</button>
+                                    <button type="submit" class="btnRegister" onclick="index.html">Register</button>
+                                    <label>
+                                        <input type="checkbox" checked="checked" name="remember"> Remember me
+                                    </label>
+                                </div>
+                            </form>
+                        </div>
+
+                        <script>
+                            function loginFunction() {
+                                var x = document.getElementById("loginForm");
+                                if (x.style.display === "none") {
+                                    x.style.display = "block";
+                                } else {
+                                    x.style.display = "none";
+                                }
+                            }
+                        </script>
+                        <!-- other social media icons -->
+                        <a href="https://www.facebook.com/" target="_blank">
+                            <i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                        <a href="https://www.youtube.com/" target="_blank">
+                            <i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank">
+                            <i class="fa fa-instagram" aria-hidden="true"></i></a>
+                        <a href="https://www.twitter.com/" target="_blank">
+                            <i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main>
+            <section>
+                <div class="title-container">
+                    <!-- Title -->
+                    <img src="images/shops/title.jpg" alt="Shops" >
+                    <h1> Shops </h1>
+                </div>
+                <!-- Filter Menu -->   
+                <div class="card-container">
+                    <input type="radio" id="All" name="categories" value="All" checked>
+                    <input type="radio" id="height" name="categories" value="height">
+                    <input type="radio" id="age" name="categories" value="age">
+                    <input type="radio" id="accessibility" name="categories" value="accessibility">
+                    <input type="radio" id="scare" name="categories" value="scare">
+                    <ol class="filters">
+                        <li>
+                            <label for="All">All</label>
+                        </li>
+                        <li>
+                            <label for="height">Memorabilia</label>
+                        </li>
+                        <li>
+                            <label for="age">Apparel</label>
+                        </li>
+                        <li>
+                            <label for="accessibility">Toys</label>
+                        </li>
+                        <li>
+                            <label for="scare">Personalised Items</label>
+                        </li>
+                    </ol>
+                    <!-- Shop -->
+                    <ol class="posts">
+                        <li class="post" data-category="age">
+                            <article>
+                                <div class="card">
+                                    <div class="cardimg">
+                                        <!-- Shop Image -->
+                                        <img src="images/shops/Shops1.jpg" alt="Camp Store">
+                                    </div>
+                                    <div class="description">
+                                        <!-- Shop Description -->
+                                        <h3>Camp Store</h3>
+                                        <p>
+                                            Get all your Camp Half-Blood supplies from our Camp Store! 
+                                            <br>
+                                            <br>Location: Yellow Grounds
+                                        </p>
+                                    </div>
+                                </div>
+                            </article>
+                        </li>
+                        <li class="post" data-category="height scare">
+                            <article>
+                                <div class="card">
+                                    <div class="cardimg">
+                                        <!-- Shop Image -->
+                                        <img src="images/shops/Shops2.jpg" alt="The Pine Store">
+                                    </div>
+                                    <div class="description">
+                                        <!-- Shop Description -->
+                                        <h3>The Pine Store</h3>
+                                        <p>
+                                            Let your loved ones experience the magic of Camp Half-Blood with items ranging to little tokens and personalised writing instruments to banners and anything in between! 
+                                            <br>
+                                            <br>Location: Red Grounds
+                                        </p>
+                                    </div>
+                                </div>
+                            </article>
+                        </li>
+                        <li class="post" data-category="accessibility">
+                            <article>
+                                <div class="card">
+                                    <div class="cardimg">
+                                        <!-- Shop Image -->
+                                        <img src="images/shops/Shops3.jpg" alt="YYY Store">
+                                    </div>
+                                    <div class="description">
+                                        <!-- Shop Description -->
+                                        <h3>The Play-Grounds</h3>
+                                        <p>
+                                            Minature versions of the crew now available to accompany you on your journey to defeating your own demons.
+                                            <br>
+                                            <br>Location: Yellow Grounds
+                                        </p>
+                                    </div>
+                                </div>
+                            </article>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+        </main>
+        <aside>
+            <!-- Scroll to Top Button -->
+            <div id="TopBtn"><a href="#top"><i class="fa fa-angle-up" aria-hidden="true"></i></a></div>
+            <script>
+                $('#TopBtn').hide();
+                $(window).scroll(function() {
+                    var height = $(window).scrollTop();
+                    if (height > 100) {
+                        $('#TopBtn').fadeIn();
+                    } else {
+                        $('#TopBtn').fadeOut();
+                    }
+                });
+            </script>
+        </aside>
+
+        <footer>
+            <!-- Footer -->
+            <div class="footer-container">
+                <div class="leftfooter">
+                    <p>&copy; 3Pandas Corporation</p>
+                </div>
+                <ul class="rightfooter">
+                    <li><a href="Appendix/Camp%20Half%20Blood%20Rules%20and%20Regulations.pdf" download>Rules and Regualations</a></li>
+                    <li><a href="FAQ.html#Cookies">Cookies Policy</a></li>
+                    <li><a href="FAQ.html#Privacy">Privacy Policy</a></li>
+                    <li><a href="FAQ.html#T&C">Terms and Conditions</a></li>
+                </ul>
+            </div>
+        </footer>
+    </body>
+</html>

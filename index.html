@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Camp Half-Blood Theme Park </title>
+        <meta charset="utf-8">
+        <meta name="description" content="This is the official website of Camp Half-Blood, a Fantasy Theme Park.">
+        <meta name="author" content="Camp Half-Blood">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="Camp Half-Blood, a Fantasy Theme Park">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel=stylesheet href="stylesheet.css">
+        <meta name=”robots” content=”noindex,nofollow”>
+    </head>
+
+    <body>
+        <header>		
+            <a id="top"></a>
+            <div class="header-container">
+                <!-- Navigation Bar -->
+                <nav>
+                    <a href="Attractions.html"><i class="fa fa-star"></i> Attractions</a>
+                    <a href="Shops.html"><i class="fa fa-shopping-bag"></i> Shops</a> 
+                    <a href="Dining.html"><i class="fa fa-cutlery"></i> Dining</a> 
+                    <a href="Tickets.html"><i class="fa fa-ticket"></i> Tickets</a> 
+                    <a href="Park_Map.html"><i class="fa fa-map"></i> Map</a>
+                    <a href="FAQ.html"><i class="fa fa-question"></i> Contact Us/FAQ</a>
+                </nav>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+                <script>
+                    $("nav").addClass("js").before('<div id="menu">&#9776;</div>');
+                    $("#menu").click(function(){
+                        $("nav").toggle();
+                    });
+                    $(window).resize(function(){
+                        if(window.innerWidth > 600) {
+                            $("nav").removeAttr("style");
+                        }
+                    });
+                </script>
+                <!-- Logo and Opening Hours -->
+                <div class="leftheader">
+                    <div class="logo">
+                        <a href="index.html">
+                            <img src="images/header/logo.svg" alt="Camp Half-Blood">
+                            <p>Camp Half-Blood</p></a>
+                    </div>
+                    <div class="opening">
+                        <img id="clock">
+                        <script>
+                            var d = new Date();
+                            var n = d.getUTCHours();
+                            if(4<n && n<13){//between 1200hrs and 2100hrs or 9pm
+                                document.getElementById("clock").src = "images/header/open.svg";
+                            }else{
+                                document.getElementById("clock").src = "images/header/close.svg";
+                            }
+                        </script>
+                    </div>
+                </div>
+                <div class="rightheader">
+                    <!-- Language Selector -->
+                    <div class="language-container">
+                        <select class="language-selection">
+                            <option value ="EN">English</option>
+                            <option value ="CN">中文</option>
+                        </select>
+                    </div>
+                    <!-- Social Media -->
+                    <div class="social-container">
+                        <!-- Login Menu -->
+                        <button class="loginBtn" onclick="loginFunction()"><i class="fa fa-user-circle-o" aria-hidden="true"></i></button>
+                        <div id="loginForm" class="modal">
+                          <form class="modal-content animate" action="/action_page.php" method="post">
+                            <div class="imgcontainer">
+                              <span onclick="document.getElementById('loginForm').style.display='none'" class="close" title="Close">&times;</span>
+                              <img src="images/header/logo.svg" alt="logo" class="formlogo">
+                            </div>
+
+                            <div class="logincontainer">
+                              <label><b>Email Address:</b></label>
+                              <input type="text" placeholder="Enter Email" name="email" required>
+
+                              <label><b>Password:</b></label>
+                              <input type="password" placeholder="Enter Password" name="psw" required>
+
+                              <button type="submit" class="btnLogin">Login</button>
+                              <button type="submit" class="btnRegister" onclick="index.html">Register</button>
+                              <label>
+                                <input type="checkbox" checked="checked" name="remember"> Remember me
+                              </label>
+                            </div>
+                          </form>
+                        </div>
+
+                        <script>
+                        function loginFunction() {
+                            var x = document.getElementById("loginForm");
+                            if (x.style.display === "none") {
+                                x.style.display = "block";
+                            } else {
+                                x.style.display = "none";
+                            }
+                        }
+                        </script>
+                        
+                        <!-- other social media icons -->
+                        <a href="https://www.facebook.com/" target="_blank">
+                            <i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                        <a href="https://www.youtube.com/" target="_blank">
+                            <i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank">
+                            <i class="fa fa-instagram" aria-hidden="true"></i></a>
+                        <a href="https://www.twitter.com/" target="_blank">
+                            <i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+        <main>
+            <div>
+                <div class="slideshow-container">
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">1 / 3</div>
+                        <img src="images/index/slideshow1.jpg" class="image" alt="Roler Coaster">
+                        <div class="text">Roller Coaster</div>
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">2 / 3</div>
+                        <img src="images/index/slideshow2.jpg" class="image" alt="Water Slide">
+                        <div class="text">Water Slide</div>
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">3 / 3</div>
+                        <img src="images/index/slideshow3.jpg" class="image" alt="Thrill Ride">
+                        <div class="text">Thrill Ride</div>
+                    </div>
+
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                </div>
+                <br>
+
+                <div style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span> 
+                    <span class="dot" onclick="currentSlide(2)"></span> 
+                    <span class="dot" onclick="currentSlide(3)"></span> 
+                </div>
+
+                <script>
+                    var slideIndex = 1;
+                    showSlides(slideIndex);
+
+                    function plusSlides(n) {
+                        showSlides(slideIndex += n);
+                    }
+
+                    function currentSlide(n) {
+                        showSlides(slideIndex = n);
+                    }
+
+                    function showSlides(n) {
+                        var i;
+                        var slides = document.getElementsByClassName("mySlides");
+                        var dots = document.getElementsByClassName("dot");
+                        if (n > slides.length) {slideIndex = 1}    
+                        if (n < 1) {slideIndex = slides.length}
+                        for (i = 0; i < slides.length; i++) {
+                            slides[i].style.display = "none";  
+                        }
+                        for (i = 0; i < dots.length; i++) {
+                            dots[i].className = dots[i].className.replace(" active", "");
+                        }
+                        slides[slideIndex-1].style.display = "block";  
+                        dots[slideIndex-1].className += " active";
+                    }
+                </script>
+
+                <br>
+
+
+                <!--Important Notices.-->
+                <div id = "border">
+                    <p class="noticeheading"><b>Important Notices</b></p>
+                    <p class="noticecontent">Due to the current Covid-19 situation, our Theme park would be closed temporarily.</p>
+                </div>
+
+                <br>
+
+                <!--Book Tickets.-->
+                <div>
+                    <a href="Tickets.html" class="button">Book Tickets</a>
+                </div>
+
+                <br>
+
+
+                <!--Attractions.-->
+                <div class="indexrow">
+                    <div class="indexcolumn">
+                        <div class="container">
+                            <a href="Attractions.html#Escape_the_Minotaur">
+                                <img src="images/index/Ride%201.jpg" alt="Escape the Minotaur" style="width:100%" class="image1">
+                                <div class="overlay">
+                                    <p class="attractionheading"><b>Escape the Minotaur</b></p>
+                                    <p class="attractioncontent">Join us as we speed through the forest to escape from the axe-carrying Minotaur!</p>
+                                </div>      
+                            </a>
+                        </div>    
+                    </div>
+
+
+                    <div class="indexcolumn">
+                        <div class="container">
+                            <a href="Attractions.html#Pegasus">
+                                <img src="images/index/Ride%202.jpg" alt="Pegasus" style="width:100%" class="image1">
+                                <div class="overlay">
+                                    <p class="attractionheading"><b>Pegasus</b></p>
+                                    <p class="attractioncontent">Hop on the back of your very own Pegasus and reach out for the skies!</p>
+                                </div>  
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <div class="indexcolumn">
+                        <div class="container">
+                            <a href="Attractions.html#The_Big_House">
+                                <img src="images/index/Roleplay%20zone%201.jpg" alt="The Big House" style="width:100%" class="image1">
+                                <div class="overlay">
+                                    <p class="attractionheading"><b>The Big House</b></p>
+                                    <p class="attractioncontent">Venture into the dark and gloomy house to collect the neccessary items required to defeat Hades.</p>
+                                </div> 
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <aside>
+            <!-- Scroll to Top Button -->
+            <div id="TopBtn"><a href="#top"><i class="fa fa-angle-up" aria-hidden="true"></i></a></div>
+            <script>
+                $('#TopBtn').hide();
+                $(window).scroll(function() {
+                    var height = $(window).scrollTop();
+                    if (height > 100) {
+                        $('#TopBtn').fadeIn();
+                    } else {
+                        $('#TopBtn').fadeOut();
+                    }
+                });
+            </script>
+        </aside> 
+
+        <!--Footer.-->
+        <footer>
+            <div class="footer-container">
+                <div class="leftfooter">
+                    <p>&copy; 3Pandas Corporation</p>
+                </div>
+                <ul class="rightfooter">
+                    <li><a href="Appendix/Camp%20Half%20Blood%20Rules%20and%20Regulations.pdf" download>Rules and Regualations</a></li>
+                    <li><a href="FAQ.html#Cookies">Cookies Policy</a></li>
+                    <li><a href="FAQ.html#Privacy">Privacy Policy</a></li>
+                    <li><a href="FAQ.html#T&C">Terms and Conditions</a></li>
+                </ul>
+            </div>
+        </footer>
+    </body> 
+</html>

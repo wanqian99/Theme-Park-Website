@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Camp Half-Blood Theme Park </title>
+        <meta charset="utf-8">
+        <meta name="description" content="This is the official website of Camp Half-Blood, a Fantasy Theme Park.">
+        <meta name="author" content="Camp Half-Blood">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="Camp Half-Blood, a Fantasy Theme Park">
+        <link rel="stylesheet" type="text/css" href="stylesheet.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel=stylesheet href="stylesheet.css">
+        <meta name=”robots” content=”noindex,nofollow”>
+    </head>
+    <body>   
+        <header>
+            <a id="top"></a>
+            <div class="header-container">
+                <!-- Navigation Bar -->
+                <nav>
+                    <a href="Attractions.html"><i class="fa fa-star"></i> Attractions</a>
+                    <a href="Shops.html"><i class="fa fa-shopping-bag"></i> Shops</a> 
+                    <a href="Dining.html"><i class="fa fa-cutlery"></i> Dining</a> 
+                    <a href="Tickets.html"><i class="fa fa-ticket"></i> Tickets</a> 
+                    <a class="active" href="Park_Map.html"><i class="fa fa-map"></i> Map</a>
+                    <a href="FAQ.html"><i class="fa fa-question"></i> Contact Us/FAQ</a>
+                </nav>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+                <script>
+                    $("nav").addClass("js").before('<div id="menu">&#9776;</div>');
+                    $("#menu").click(function(){
+                        $("nav").toggle();
+                    });
+                    $(window).resize(function(){
+                        if(window.innerWidth > 600) {
+                            $("nav").removeAttr("style");
+                        }
+                    });
+                </script>
+                <!-- Logo and Opening Hours -->
+                <div class="leftheader">
+                    <div class="logo">
+                        <a href="index.html">
+                            <img src="images/header/logo.svg" alt="Camp Half-Blood">
+                            <p>Camp Half-Blood</p></a>
+                    </div>
+                    <div class="opening">
+                        <img id="clock">
+                        <script>
+                            var d = new Date();
+                            var n = d.getUTCHours();
+                            if(4<n && n<13){//between 1200hrs and 2100hrs or 9pm
+                                document.getElementById("clock").src = "images/header/open.svg";
+                            }else{
+                                document.getElementById("clock").src = "images/header/close.svg";
+                            }
+                        </script>
+                    </div>
+                </div>
+                <div class="rightheader">
+                    <!-- Language Selector -->
+                    <div class="language-container">
+                        <select class="language-selection">
+                            <option value ="EN">English</option>
+                            <option value ="CN">中文</option>
+                        </select>
+                    </div>
+                    <!-- Social Media -->
+                    <div class="social-container">
+                        <!-- Login Menu -->
+                        <button class="loginBtn" onclick="loginFunction()"><i class="fa fa-user-circle-o" aria-hidden="true"></i></button>
+                        <div id="loginForm" class="modal">
+                            <form class="modal-content animate" action="/action_page.php" method="post">
+                                <div class="imgcontainer">
+                                    <span onclick="document.getElementById('loginForm').style.display='none'" class="close" title="Close">&times;</span>
+                                    <img src="images/header/logo.svg" alt="logo" class="formlogo">
+                                </div>
+
+                                <div class="logincontainer">
+                                    <label><b>Email Address:</b></label>
+                                    <input type="text" placeholder="Enter Email" name="email" required>
+
+                                    <label><b>Password:</b></label>
+                                    <input type="password" placeholder="Enter Password" name="psw" required>
+
+                                    <button type="submit" class="btnLogin">Login</button>
+                                    <button type="submit" class="btnRegister" onclick="index.html">Register</button>
+                                    <label>
+                                        <input type="checkbox" checked="checked" name="remember"> Remember me
+                                    </label>
+                                </div>
+                            </form>
+                        </div>
+
+                        <script>
+                            function loginFunction() {
+                                var x = document.getElementById("loginForm");
+                                if (x.style.display === "none") {
+                                    x.style.display = "block";
+                                } else {
+                                    x.style.display = "none";
+                                }
+                            }
+                        </script>
+                        <!-- other social media icons -->
+                        <a href="https://www.facebook.com/" target="_blank">
+                            <i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                        <a href="https://www.youtube.com/" target="_blank">
+                            <i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank">
+                            <i class="fa fa-instagram" aria-hidden="true"></i></a>
+                        <a href="https://www.twitter.com/" target="_blank">
+                            <i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="title-container">
+            <!-- Title -->
+            <img src="images/park_map/maptitle.jpg" alt="Attractions" >
+            <h1>Park Map</h1>
+        </div>
+        <div id="section1">
+            <img src="images/park_map/parksmapnew3.svg" alt="Park_Map" usemap="#mapPark">
+            <map name="mapPark">
+                <area shape="circle" coords="197,178,39" alt="Escape the Minotaur" href="Attractions.html#Escape_the_Minotaur">
+                <area shape="circle" coords="362,162,39" alt="Pegasus" href="Attractions.html#Pegasus">
+                <area shape="circle" coords="364,75,39" alt="Apollo Bus Services" href="Attractions.html#Apollo_Bus_Service">
+                <area shape="circle" coords="528,176,39" alt="Ferry to Hades" href="Attractions.html#Ferry_to_Hades">
+                <area shape="circle" coords="197,322,39" alt="The Big House" href="Attractions.html#The_Big_House">
+                <area shape="circle" coords="536,314,39" alt="Cabins" href="Attractions.html#Cabins">
+            </map>
+        </div>
+
+        <div id="section2">
+            <img src="images/park_map/parksmapnew3.svg" alt="Park_Map_Mobile" usemap="#mapParkSmall">
+            <map name="mapParkSmall">
+                <area shape="circle" coords="102,92,20" alt="Escape the Minotaur" href="Attractions.html#Escape_the_Minotaur">
+                <area shape="circle" coords="188,84,20" alt="Pegasus" href="Attractions.html#Pegasus">
+                <area shape="circle" coords="189,39,20" alt="Apollo Bus Services" href="Attractions.html#Apollo_Bus_Service">
+                <area shape="circle" coords="274,91,20" alt="Ferry to Hades" href="Attractions.html#Ferry_to_Hades">
+                <area shape="circle" coords="102,167,20" alt="The Big House" href="Attractions.html#The_Big_House">
+                <area shape="circle" coords="278,163,20" alt="Cabins" href="Attractions.html#Cabins">
+            </map>
+        </div>
+
+        <div class="legends">
+            <h1>Legends</h1>
+            <ul class="iconTexts">
+                <li class="iconText">
+                    <p class="legendstext"><img src="images/park_map/parksmap_attractions.svg" alt="park attractions"> Attractions</p>
+                </li>
+
+                <li class="iconText">
+                    <p class="legendstext"><img src="images/park_map/parksmap_food.svg" alt="park restaurants"> Dining</p>
+                </li>
+
+                <li class="iconText">
+                    <p class="legendstext"><img src="images/park_map/parksmap_info.svg" alt="park info area"> Information Counter</p>
+                </li>
+
+                <li class="iconText">
+                    <p class="legendstext"><img src="images/park_map/parksmap_ticketer.svg" alt="park ticket machine/person"> Onsite Ticket Area</p>
+                </li>
+                <li class="iconText">
+                    <p class="legendstext"><img src="images/park_map/parksmap_toilet.svg" alt="park toilet"> Restrooms</p>
+                </li>
+            </ul>
+        </div>
+
+        <aside>
+            <!-- Scroll to Top Button -->
+            <div id="TopBtn"><a href="#top"><i class="fa fa-angle-up" aria-hidden="true"></i></a></div>
+            <script>
+                $('#TopBtn').hide();
+                $(window).scroll(function() {
+                    var height = $(window).scrollTop();
+                    if (height > 100) {
+                        $('#TopBtn').fadeIn();
+                    } else {
+                        $('#TopBtn').fadeOut();
+                    }
+                });
+            </script>
+        </aside> 
+
+        <footer>
+            <!-- Footer -->
+            <div class="footer-container">
+                <div class="leftfooter">
+                    <p>&copy; 3Pandas Corporation</p>
+                </div>
+                <ul class="rightfooter">
+                    <li><a href="Appendix/Camp%20Half%20Blood%20Rules%20and%20Regulations.pdf" download>Rules and Regualations</a></li>
+                    <li><a href="FAQ.html#Cookies">Cookies Policy</a></li>
+                    <li><a href="FAQ.html#Privacy">Privacy Policy</a></li>
+                    <li><a href="FAQ.html#T&C">Terms and Conditions</a></li>
+                </ul>
+            </div>
+        </footer>
+    </body>
+
+</html>

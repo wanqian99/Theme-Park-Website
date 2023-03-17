@@ -1,0 +1,1650 @@
+/* smooth scrolling behaviour */
+html {
+    scroll-behavior: smooth;
+}
+
+/* website footer */
+.footer-container {
+    bottom: 0px;
+    text-align: justify;
+    width:100%;
+    display:flex;
+    font-size: 12px;
+}
+
+/* styling for the corporate name to be placed on the left of the footer */
+.leftfooter{
+    float:left;
+    text-align: left;
+    width: 50%;
+}
+
+/* styling for the footer links to be placed on the right of the footer */
+.rightfooter{
+    float:right;
+    margin-right: 1%;
+    text-align: right;
+    width: 50%;
+    list-style-type: none;
+}
+
+.rightfooter a {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+.rightfooter li{
+    display: inline-block;
+    padding: 4px;
+}
+
+/* footer alignment for mobile screen */
+@media screen and (max-width: 800px){
+    .rightfooter li{
+        display: block;
+    }
+}
+
+/* header alignment */
+.header-container{
+    display: grid;
+    grid-template-columns: 50% auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "leftheader rightheader"
+        "navbar navbar";
+    align-content: stretch;
+}
+
+
+/* styling for corporate logo and time to be placed on the left of the header */
+.leftheader{
+    float:left;
+    width: 50%;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    grid-area: leftheader;
+}
+
+.logo{
+    display: inline-block;
+    grid-area: logo;
+    text-align: center;
+    padding: 0px 2px 0px 2px;
+}
+
+.logo p {
+    margin: 0px;
+    padding: 0px;
+    font-size: 13px;
+
+}
+
+.logo a {
+    text-decoration: none;
+    color: black;
+}
+
+.logo img {
+    width: 55px;
+}
+
+.opening {
+    grid-area: clock;
+    display: inline-flex;
+    padding-bottom: 2px;
+}
+
+.opening img{
+    width: 60px;
+    padding-left: 2px;
+}
+
+/* styling for the login, social media and language selection to be placed on the right of the header */
+.rightheader{
+    float:right;
+    width: 100%;
+    margin-top:1%;
+    text-align: right;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    grid-area: leftheader;
+    grid-area: rightheader;
+}       
+
+.rightheader img{
+    width: 25px;
+}
+
+.language-container{
+    float: right;
+    margin-top: 0.5%
+}
+
+.language-selection{
+    border-radius: 12px;
+    background-color: white;
+    border: 1px solid lightsteelblue;
+    padding: 1px 1px 1px 6px;
+    width: 95px;
+    height: 25px;
+
+}
+
+.social-container{
+    float:right;
+}
+
+.social-container .fa{
+    color: black;
+    font-size: 30px;
+}
+
+/* Login Menu*/
+
+/* Button to open form */
+.loginBtn {
+    background-color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    width: 30px;
+    padding-left: 0px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    margin: 3% auto auto auto; /* 3% from the top, 15% from the bottom and centered */
+    border: 1px solid lightsteelblue;
+    width: 100%; /* Could be more or less, depending on screen size */
+    max-width: 355px;
+    background-color: white;
+    border-radius: 25px;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 0 0;
+    position: relative;
+}
+
+img.formlogo {
+    border: 1px solid lightsteelblue;
+    border-radius: 20px;
+    padding: 15px;
+    width: 200px;
+}
+
+.logincontainer {
+    padding: 16px;
+    text-align: left;
+}
+
+/* Lables for input fields */
+.logincontainer label {
+    font-size: 14px;
+    margin-left: 22px;
+}
+
+/* Input fields */
+.logincontainer input[type=text], .logincontainer input[type=password] {
+    width: 90%;
+    padding: 15px;
+    margin: 0px 0px 10px 20px;
+    border: none;
+    background-color: aliceblue;
+    border-radius: 20px;
+    color: lightslategrey;
+    font-size: 12px;
+}
+
+/* Darker background when user is typing */
+.logincontainer input[type=text]:focus, .logincontainer input[type=password]:focus {
+    background-color: lightsteelblue;
+    color: black;
+    outline: none;
+}
+
+/* Login button */
+.logincontainer .btnLogin, .btnRegister {
+    background: steelblue;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 90%;
+    margin: 0px 0px 10px 20px;
+    opacity: 0.7;
+    border-radius: 25px;
+}
+
+/* Register button */
+.logincontainer .btnRegister {
+    background: white;
+    border: 1px solid steelblue;
+    color: black;
+}
+
+/* Add some hover effects to buttons */
+.logincontainer .btnLogin:hover, .btnRegister:hover {
+    opacity: 1;
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 15px;
+    top: -20px;
+    color: black;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: steelblue;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 1000px) {
+    .modal-content {
+        margin: 25% auto auto auto; /* 25% from the top, 15% from the bottom and centered */
+    }
+}
+
+/* header alignment for mobile site */
+@media screen and (max-width: 1000px){
+    .header-container {
+        display: grid; 
+        grid-template-columns: 10% 50% auto;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "navbar leftheader rightheader"
+            ;
+    }
+
+    .leftheader {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-self: end;
+    }
+
+    .opening {
+        grid-area: clock;
+        display: inline-flex;
+        text-align: center;
+        padding-right: 15px;
+        padding-bottom: 2px;
+    }
+
+    .opening img{
+        width: 35px;
+        height: auto;
+    }
+
+    .logo, .logo p {
+        display: inline-block;
+        width: 80px;
+        font-size: 9px;
+        margin: 0px;
+        padding: 0px;
+        text-align: center;
+    }
+
+    .logo img{
+        width: 29px;
+        align-content: flex-end;
+
+    }
+
+    .rightheader{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: flex-end;
+    }
+
+
+    .loginBtn {
+        background-color: white;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        width: 15px;
+        padding-left: 0px;
+    }
+
+    .loginPopup {
+        display: none;
+        position: absolute;
+        top: 51px;
+        right: 10px;
+        border: 1px solid lightsteelblue;
+        box-shadow: 3px 3px lightsteelblue;
+        border-radius: 25px;
+        z-index: 1;
+        text-align: left;
+    }
+
+    .social-container .fa{
+        font-size: 15px;
+        color: black;
+    }
+
+
+}
+
+
+/* Language Selector alignment for small screen */
+@media screen and (max-width: 1000px) {
+    .language-selection{
+        font-size: 12px;
+        width:85px;
+        height: 18px;
+    }
+}
+
+
+/* website nav bar */
+nav {
+    width: 100%;
+    background-color: white;
+    overflow: auto;
+    grid-area: navbar;
+}
+
+nav a {
+    width: 16.66%;
+    border-top: 1px solid steelblue;
+    border-bottom: 1px solid steelblue;
+    margin-bottom: 2px;
+    float:left;
+    padding: 12px;
+    display:block;
+    color: black;
+    text-decoration: none;
+    font-size: 17px;
+    text-align: center;
+}
+nav a:last-child{
+    border-right: none;
+}
+
+nav a:hover {
+    background-color: powderblue;
+}
+
+nav a.active {
+    background-color: steelblue;
+    color: white;
+}
+
+/* changes nav bar orientation based on the screen size */
+@media screen and (max-width: 1000px) {
+    #menu {
+        width:38px;
+        display:block;
+        background: white;
+        font-size:30px;
+        text-align:left;
+        color:black;
+    }
+    nav.js {
+        display:none;
+        position: absolute;
+        margin-top: 55px;
+        width: 100%;
+    }
+    nav {
+        width:100%;
+        z-index: 2;
+    }
+    nav a {
+        width: 100%;
+        border: none;
+    }
+    nav a:first-child {
+        border-top: 1px solid steelblue;
+    }
+
+    nav a:last-child {
+        border-bottom: 1px solid steelblue;
+    }
+}
+@media screen and (min-width:1000px) {
+    #menu {
+        display:none;
+    }
+}
+
+/* Webpage title */
+h1 {
+    clear:both;
+    border: 2px solid gray;
+    outline: none;
+    margin: 2px;  
+    padding: 10px;
+    text-align: center;
+}
+
+/* Scroll to Top button */
+#TopBtn {
+    position: fixed;
+    bottom: 6%;
+    float: right;
+    right: 2%;
+    max-width: 30px;
+    height: 30px;
+    width: 100%;
+    background-color: darkgrey;
+    border: none;
+    opacity: 0.8;
+    padding: 1px;
+    border-radius: 15px;
+    text-align: center;
+
+}
+
+#TopBtn a{
+    color: white;
+    text-decoration: none; 
+    font-size: 25px;
+}
+
+@media screen and (max-width: 800px) {
+    #TopBtn {
+        position: fixed;
+        bottom: 12%;
+    }
+}
+
+
+/*--------------------INDEX.HTML--------------------*/
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+}
+
+/* image-for slideshow*/
+.image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+    transition: 0.5s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.5);
+}
+
+/* Caption text */
+.text {
+    color: white;
+    font-size: 25px;
+    padding: 15px 0px;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+    color: white;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: darkgrey;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.5s ease;
+}
+
+.active, .dot:hover {
+    background-color: grey;
+}
+
+/* Fading animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 1000px) {
+    .prev, .next,.text {
+        font-size: 11px
+    }
+
+    .slideshow-container {
+        margin-top: 6px;
+    }
+}
+
+
+/* Important notices border */
+#border {
+    padding:20px;
+    border-radius: 25px;
+    border: 1px solid;
+    border-color: lightsteelblue;
+    box-shadow: 3px 3px lightsteelblue;
+}
+
+/* Important notices heading text align */
+.noticeheading {
+    text-decoration: underline;
+    text-align: center;
+    font-size: 25px;
+    margin: 0px;
+    margin-bottom: 10px;
+}
+
+/* Important notices content text align */
+.noticecontent {
+    text-align: center;
+    font-size: 15px;
+    margin: 0px
+}
+
+/* Book Tickets button */
+.button {
+    background-color: white;
+    border: none;
+    color: black;
+    padding:5px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 20px;
+    margin:0 auto;
+    cursor: pointer;
+    width: 200px;
+    border-radius: 25px;
+    border: 1px solid;
+    border-color: lightsteelblue;
+}
+
+.button:hover {
+    background-color: lightsteelblue;
+    color: white;
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+    0% { transform: translate(0.5px, 0.5px) rotate(0deg); }
+    10% { transform: translate(-0.5px, -1px) rotate(-0.5deg); }
+    20% { transform: translate(-1.5px, 0px) rotate(0.5deg); }
+    30% { transform: translate(1.5px, 1px) rotate(0deg); }
+    40% { transform: translate(0.5px, -0.5px) rotate(0.5deg); }
+    50% { transform: translate(-0.5px, 1px) rotate(-0.5deg); }
+    60% { transform: translate(-1.5px, 0.5px) rotate(0deg); }
+    70% { transform: translate(1.5px, 0.5px) rotate(-0.5deg); }
+    80% { transform: translate(-0.5px, -0.5px) rotate(0.5deg); }
+    90% { transform: translate(0.5px, 1px) rotate(0deg); }
+    100% { transform: translate(0.5px, -1px) rotate(-0.5deg); }
+}
+
+.button:active {
+    background-color: lightsteelblue;
+    box-shadow: 0 5px lightgrey;
+    transform: translateY(4px);
+    animation-play-state: paused;
+}
+
+/* Attractions */
+* {
+    box-sizing: border-box;
+}
+
+.indexcolumn {
+    float: left;
+    width: 33.33%;
+    padding: 0px 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* image-for attraction*/
+.image1 {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Attractions overlay text*/
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    text-align: center;
+    width: 0;
+    height: 100%;
+    transition: .5s ease;
+    color: white;
+}
+
+.container:hover .overlay {
+    width: 100%;
+    left: 0;
+}
+
+/* attraction heading text*/
+.attractionheading {
+    font-size: 26px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+/* attraction content text*/
+.attractioncontent {
+    font-size: 16px;
+    padding: 0px 10px;
+    margin-top: 0px;
+}
+
+/* when screen 1000px or less*/
+@media screen and (max-width: 900px) {
+    .indexcolumn {
+        width: 100%;
+    }
+
+    /* attraction heading text*/
+    .attractionheading {
+        font-size: 30px;
+        margin-top: 20px;
+        /*        margin-bottom: 50px;*/
+    }
+
+    /* attraction content text*/
+    .attractioncontent {
+        font-size: 17px;
+        padding: 0px 50px;
+        margin-top: 0px;
+    }
+}
+
+/*--------------------ATTRACTIONS.HTML, DINING.HTML, SHOPS.HTML--------------------*/
+
+/* area for the content of the webpage */
+/* Webpage title */
+
+/* title */
+.title-container {
+    position:relative;
+    max-width: 100%;
+}
+.title-container h1 {
+    color: white;
+    font-size: 25px;
+    padding: 15px 0px;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.3);
+    border: none;
+    margin: 0px 0px 2px 0px
+}
+.title-container img {
+    width: 100%;
+    object-fit: fill;
+}
+
+/* container for each article */
+.card-container {
+    margin: auto;
+    width: 80%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "filter"
+        "card";
+}
+
+.card {
+    display: flex;
+    margin: 10px;
+    border-radius: 25px;
+    border: 1px solid;
+    border-color: lightsteelblue;
+    box-shadow: 3px 3px lightsteelblue;
+    grid-area: card;
+}
+/* image of the attractions */
+.cardimg{
+    float:left;
+    margin-right: 10px;
+}
+
+.cardimg img{
+    display: block;
+    border-radius: 25px 0px 0px 25px;
+    width: 500px;
+    height: 320px;
+    object-fit: cover;
+}
+
+/* mobile version alignment for the cards */    
+@media only screen and (max-width: 1000px) {
+    .title-container {
+        position:relative;
+        max-width: 100%;
+        margin-top: 2px;
+    }
+
+    .card-container {
+        width: 100%;
+    }
+
+    .card{
+        float: none;
+        display: inline-block;
+        width: 95%;
+    }
+    .cardimg {
+        margin: auto;
+    }
+    .cardimg img{
+        display: block;
+        margin: 3%;
+        border-radius: 25px;
+        max-width: 95%;
+        height: auto;
+
+
+    }
+}
+
+
+/* description of the attractions */
+.description{
+    float:right;
+    margin-left:10px;
+    margin-right:10px;
+    text-align: left;
+    max-width: 97%;
+}
+
+/* rating system in the description of the attractions */
+.checked {
+    color: orange;
+}
+
+/* filter section */
+ol {
+    list-style: none;
+}
+
+input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+}
+
+
+/* filter buttons */
+.filters {
+    text-align: center;
+    grid-area: filter;
+    padding-left: 0px;
+}
+
+.filters * {
+    display: inline-block;
+}
+
+
+@media screen and (max-width: 800px) {
+    .filters * {
+        display: inline-grid;
+        width: 150px;
+
+    }
+}
+
+.filters label {
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    min-width: 90px;
+    line-height: normal;
+    cursor: pointer;
+    transition: all 0.1s;
+}
+
+.filters label:hover {
+    background: steelblue;
+    color: white;
+}
+
+
+/* filtered elements */
+.posts {
+    display: inline-block;
+    padding-left: 0px;
+}
+
+.posts .post {
+    background-color: white;
+    display: inline-block;
+    width: 100%;
+}
+
+/* filtering rules */
+[value="All"]:checked ~ .filters [for="All"],
+[value="height"]:checked ~ .filters [for="height"],
+[value="age"]:checked ~ .filters [for="age"],
+[value="accessibility"]:checked ~ .filters [for="accessibility"],
+[value="scare"]:checked ~ .filters [for="scare"],
+[value="forall"]:checked ~ .filters [for="forall"]{
+    background: steelblue;
+    color: white;
+}
+
+[value="All"]:checked ~ .posts [data-category] {
+    display: block;
+}
+
+[value="height"]:checked ~ .posts .post:not([data-category~="height"]),
+[value="age"]:checked ~ .posts .post:not([data-category~="age"]),
+[value="accessibility"]:checked ~ .posts .post:not([data-category~="accessibility"]),
+[value="scare"]:checked ~ .posts .post:not([data-category~="scare"]),
+[value="forall"]:checked ~ .posts .post:not([data-category~="forall"]){
+    display: none;
+}
+
+
+/*--------------------TICKETS.HTML--------------------*/
+legend.tickets{
+    padding: 10px;
+    font-size: 25px;
+    margin: 8px;
+    text-align: center;
+}
+
+/*General*/
+section.column.middle{
+    text-align: center;
+}
+
+/*SELECTOR*/
+article.selector{
+    display: inline-block;
+    margin: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+ul.selectors {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: inline-flex;
+    text-align: center;
+}
+
+a.selector{
+    color: white;
+    text-decoration: none;
+}
+
+li.selector{
+    margin: 5px;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    border: 1px solid;
+    border-color: lightsteelblue;
+    background-color: steelblue;
+    cursor: pointer;
+    transition: all 0.1s;
+    width: 20%;
+}
+
+/*FORM CONFIG*/
+div.bookingform{
+    padding: 10px;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+span.bookingform{
+    display: inline-block;
+    width: 100%;
+}
+
+
+fieldset.bookingform{
+    border: none;
+}
+
+
+input[type=text], select {
+    width: 50%;
+    padding: 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=date], select {
+    width: 50%;
+    padding: 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+
+input[type=submit] {
+    width: 50%;
+    background-color: steelblue;
+    color: white;
+    padding: 10px;
+    margin: 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+article.ticketcontainer{
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    border-radius: 25px;
+    background-color: white;
+    border: 1px solid;
+    border-color: lightsteelblue;
+    box-shadow: 3px 3px lightsteelblue;
+}
+
+/*PX TABLE CONFIG*/
+div.pxtable{
+    outline: none;
+    padding: 10px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    margin-left: 10px;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+}
+h4.pxlist{
+    text-align: center;
+    font-size: 30px;
+    margin: 15px;
+}
+table.pxlist{
+    text-align: center;
+    border: 2px solid black;
+    margin: 10px;
+    font-size: 20px;
+    display: inline-table;
+}
+th.pxlist, td.pxlist{
+    border: 2px solid black;
+    text-align: center;
+
+}
+div.promo{
+    display: inline-block;
+    width: 100%;
+    outline: none; 
+    padding: 10px;
+    margin: 5px;
+    text-align: center;
+}
+p.promo{
+    font-size: 30px;
+}
+span.promo1{
+    font-size: 25px;
+}
+
+span.promo2{
+    font-size: 20px; 
+}
+
+
+/* Create Columns */
+.column {
+    float: left;
+    padding: 10px;
+}
+
+.column.left {
+    width: 25%;
+    align-content: center;
+}
+
+.column.middle {
+    width: 50%;
+}
+.column.right{
+    float:right;
+    right: 0;
+    width:15%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;}
+
+
+
+
+/* Create Columns */
+.column {
+    float: left;
+    padding: 10px;
+}
+
+.column.left {
+    width: 25%;
+    align-content: center;
+}
+
+.column.middle {
+    width: 50%;
+}
+.column.right{
+    float:right;
+    right: 0;
+    width:15%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;}
+
+/* Adapt for other devices */
+@media screen and (max-width: 1380px) {
+    img.tickets{display: none;}
+}
+
+@media screen and (max-width: 1380px){
+    .column.middle {
+        width: 100%;
+    }
+    .column.left{
+        width: 0%
+    }
+    .column.right{
+        width: 0%
+    }
+}
+@media screen and (max-width: 1000px){
+    ul.selectors{
+        display: inline-block;
+        width: 80%;
+    }
+    li.selector{
+        width: 90%;
+    }
+}
+@media screen and (max-width: 1380px) {
+    article.selector{
+        width: 100%;
+    }
+}
+
+/*--------------------FAQ.HTML--------------------*/
+
+
+
+/* Design Head CSS*/
+div#DesignHead{ grid-area: head;}
+
+div#DesignHead{
+    border: 2px solid black;
+    width: 1250px;
+    color: white;
+    margin: 0;
+    padding: 0;
+    height: 40px;
+    background-color: white;
+    opacity: 1;
+    background-image: url(images/faq/milky-way.jpg);
+    line-height: 10px;
+
+
+
+
+
+}
+
+.h1Design{
+    border: 0px solid black;
+}
+
+/* Table Content CSS */
+
+table#Content{ grid-area: chair;}
+
+table#Content {
+
+    text-align: left;
+    width: 1250px;
+    background-color:whitesmoke;
+    border-collapse: separate;
+    border: 2px solid black;
+    height: 800px;
+
+
+}
+
+
+/* Question Headers */
+th.Questions {
+
+    border: 0px solid black;
+    color: black;
+    font-size: x-large;
+    font-weight: bold;
+    display:inline;
+
+
+}
+
+
+
+/* Content Hover */ 
+tr.cells:hover {
+    background-color: lightgray; 
+    opacity: 0.8;
+}
+
+
+/* Further Queries Box */
+
+.furtherqueries{ grid-area: queries;}
+
+.furtherqueries {
+    width: 300px;
+    padding-left:1px;
+    margin-left:10px;
+    float:none;
+    background-color: whitesmoke;
+    font-size: 14px;
+    font-style: italic;
+    height: 300px;
+    word-wrap: break-word;
+    background-image: url(images/faq/white-greymarble.jpg)
+
+}
+
+/*Grid Layout CSS*/
+
+
+.grid-container-FAQ {
+    display: grid;
+    grid-template-columns: auto 1500px auto;   
+    grid-template-areas: 
+        '. head .'
+        'queries chair .';
+    background-color: white;  
+    background-image: url(images/faq/Greymarkbleink.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+
+
+}
+
+
+/* Mobile Ver. of FAQ.html based on Iphone 6/7/8 Plus*/
+@media screen and (max-width: 450px) {
+
+
+    /*Horizontal Scrolling*/
+
+    html, body {
+        overflow-x: hidden;
+    }
+    body {
+        position: relative
+    }
+
+    /* Design Head Iphone 6/7/8 Plus Ver. */
+
+    div#DesignHead{
+        border: 0px solid black;
+        width: 400px;
+        color: white;
+        background-color: white;
+        padding:0;
+        margin:0;
+        line-height: 15px;
+
+    }
+
+    /* Table Content Iphone 6/7/8 Plus Ver.*/
+
+    table#Content {
+
+        text-align: left;
+        width: 400px;
+        background-color:whitesmoke;
+        border-collapse: separate;
+        border: 0px solid black;
+        height: 800px;
+        padding:0;
+        margin:0;
+        opacity: 0.9;
+
+
+    }
+    /* Question Header Iphone 6/7/8 Plus Ver. */
+    th.Questions {  
+        border: 0px solid black;
+        color: black;
+        word-wrap:break-word;
+
+    }
+
+    /*futher queries mobile*/
+    .furtherqueries {
+        width:400px;
+        padding:0;
+        margin:0;
+
+
+
+    } 
+
+    /*Mobile Grid Iphone 6/7/8 Plus CSS*/
+
+    .grid-container-FAQ {
+        width: 812px;
+        display: grid;
+        grid-template-columns: 414px 0px 0px;   
+        grid-template-areas: 
+            'head . .'
+            'chair . .'
+            'queries . .';
+        background-color: white; 
+        background-image: url(images/faq/Greymarkbleink.jpg);
+        background-repeat: repeat-y;
+
+    }
+
+
+
+}
+
+/* Mobile Ver. of FAQ.html based on Iphone X*/
+@media screen and (max-width: 400px) {
+
+
+    /*Horizontal Scrolling*/
+
+    html, body {
+        overflow-x: hidden;
+    }
+    body {
+        position: relative
+    }
+
+    /* Design Head Iphone X Ver. */
+
+    div#DesignHead{
+        border: 0px solid black;
+        width: 365px;
+        color: white;
+        line-height: 15px;
+        background-color: white;
+        padding:0;
+        margin:0;
+
+    }
+
+    /* Table Content Iphone X Ver.*/
+
+    table#Content {
+
+        text-align: left;
+        width: 365px;
+        background-color:whitesmoke;
+        border-collapse: separate;
+        border: 0px solid black;
+        height: 800px;
+        padding:0;
+        margin:0;
+        opacity: 0.9
+
+    }
+    /* Question Header Iphone X Ver. */
+    th.Questions {  
+        border: 0px solid black;
+        color: black;
+
+    }
+
+    /*futher queries Iphone X*/
+    .furtherqueries {
+        width:365px;
+        padding:0;
+        margin:0;
+
+
+
+    } 
+
+    /*Iphone X Grid Layout CSS*/
+
+    .grid-container-FAQ {
+        width: 812px;
+        display: grid;
+        grid-template-columns: 370px 0px 0px;   
+        grid-template-areas: 
+            'head . .'
+            'chair . .'
+            'queries . .';
+        background-color: white; 
+        background-image: url(images/faq/Greymarkbleink.jpg);
+        background-repeat: repeat-y;
+
+    }
+
+
+
+}
+
+/* Laptop Ver. of FAQ.html*/
+@media screen and (min-width:800px) and (max-width: 1500px) {
+
+
+    /* Design Head Laptop Ver. */
+
+    div#DesignHead{
+        border: 0px solid black;
+        width: 950px;
+        color: white;
+        line-height: 15px;
+        background-color: white;
+        padding:0;
+        margin:0;
+
+    }
+
+    /* Table Content Laptop Ver.*/
+
+    table#Content {
+
+        text-align: left;
+        width: 950px;
+        background-color:whitesmoke;
+        border-collapse: separate;
+        border: 2px solid black;
+        height: 800px;
+
+
+
+    }
+
+
+    /* Question Header Laptop Ver. */
+    th.Questions {  
+        border: 0px solid black;
+        color: black;
+
+    }
+
+    /*futher queries Laptop Ver.*/
+    .furtherqueries {
+        width:230px;
+        padding:0;
+        margin-left: 10px;
+        font-size: 10px;
+        height: 230px;
+
+    } 
+
+    /*Laptop Grid Layout CSS*/
+
+    .grid-container-FAQ {
+        display: grid;
+        grid-template-columns: 250px 800px auto;   
+        grid-template-areas: 
+            '. head .'
+            'queries chair .';
+        background-color: white;  
+        background-image: url(images/faq/Greymarkbleink.jpg);
+        filter:grayscale(100%);
+        background-size: 100%;
+        background-repeat: no-repeat;
+
+    }
+
+
+
+}
+
+
+
+
+
+/*--------------------Park_Map.HTML--------------------*/
+/*less than 1200px*/
+@media screen and (max-width:1200px){
+    #section1 {
+        display:none;
+    }
+    #section2{
+        text-align: center;
+        display:block;
+    }
+    #section2 img{
+        width:376px;
+        height:270px;
+    }
+
+    .legends {
+        border-radius: 25px;
+        border: 1px solid;
+        border-color: lightsteelblue;
+        box-shadow: 3px 3px lightsteelblue;
+        margin: auto;
+        width: 80%;
+        padding-bottom: 20px;
+        text-align: left;
+    }
+
+    .legends h1{
+        display:block;
+        width: 100%;
+        text-align: left;
+        padding:20px 20px 0px 20px;
+        border:none;
+        text-decoration: underline;
+    }
+
+    .iconTexts {
+        list-style-type: none;
+        display: inline;
+        padding: 0px 10px 0px 10px;
+        width: 100%;
+    }
+
+    .iconText {
+        display: inline-flex;
+        width: 47%;
+        padding: 0px 10px 0px 10px;
+    }
+    .legends img{
+        display: inline-block;
+        width:50px;
+        height:50px;
+        padding: 5px;
+        object-position: center;
+    }
+
+    p.legendstext{
+        display: flex;
+        font-size: 15px;
+        width:100%;
+    }
+}
+
+/*more than 1200px*/
+@media screen and (min-width:1200px){
+    #section1 {
+        text-align: center;
+        display:block;
+    }
+    #section1 img{
+        width: 725px;
+        height: 520px;
+    }
+    #section2{
+        display:none;
+    }
+    .legends{
+        border-radius: 25px;
+        border: 1px solid;
+        border-color: lightsteelblue;
+        box-shadow: 3px 3px lightsteelblue;
+        margin: auto;
+        width: 60%;
+        padding-bottom: 20px;
+        text-align: left;
+    }
+    .legends h1{
+        display:block;
+        width: 150px;
+        text-align: left;
+        padding:15px;
+        margin: 20px 20px 0px 20px;
+        border:1px solid steelblue;
+    }
+
+    .iconTexts {
+        list-style-type: none;
+        display: flex;
+        padding: 0px 10px 0px 10px;
+        width: 100%;
+    }
+
+    .iconText {
+        display: flex;
+        width: 23.33%;
+    }
+
+    .legends img{
+        display: inline-block;
+        width:50px;
+        height:50px;
+        padding: 5px;
+    }
+
+    p.legendstext{
+        display: flex;
+        font-size: 20px;
+        width:100%;
+    }
+}
